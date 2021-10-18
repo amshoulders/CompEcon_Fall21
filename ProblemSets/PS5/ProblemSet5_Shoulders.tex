@@ -1,0 +1,103 @@
+\documentclass{article}[12pt]
+
+% General packages
+\usepackage[english]{babel}
+\pagenumbering{arabic}
+\usepackage{color}
+\usepackage{lettrine}
+\usepackage{setspace}
+\usepackage{yfonts}
+\usepackage{type1cm}
+
+
+% Graphics packages
+\usepackage{graphicx}
+\usepackage{rotating}
+
+
+% Math packages
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{xparse}
+\usepackage{physics}
+
+% Links packages
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={blue!80!black},
+    citecolor={blue!80!black},
+    urlcolor={blue!80!black}
+}
+
+
+% Tables packages
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{float}
+\usepackage[bottom]{footmisc}
+\usepackage{booktabs,caption}
+\usepackage[flushleft]{threeparttable}
+\usepackage[labelfont=sc]{caption}
+\captionsetup[table]{skip=0pt}
+
+
+% citations
+\usepackage[round]{natbib}   % omit 'round' option if you prefer square brackets
+%\bibliographystyle{plainnat}
+%\bibliographystyle{abbrv}
+%\bibliographystyle{acm}
+%\bibliographystyle{alpha}
+\bibliographystyle{apalike}
+%\bibliographystyle{ieeetr}
+%\bibliographystyle{plain}
+%\bibliographystyle{siam}
+%\bibliographystyle{unsrt}
+
+% figures
+\usepackage{subcaption}
+
+
+\begin{document}
+
+\title{Problem Set 5}
+\author{Angela Shoulders}
+\date{October 19, 2021}
+
+\maketitle
+
+Unfortunately, I was not able to complete this assignment and my code does not fully run.  I had issues getting my code to go through my objective functions.  However, I wrote up what I did and just excluded results.
+
+To begin, I created scaled population and price variables by dividing the original variables by one million.  Next, I created a distance column using the geopy.distance function using the latitude and longitude data given.  Then I created a separate dataframe for each year.  To create my counterfactuals, I matched each buyer with each alternative target.  This created a dataframe with 2421 observations - 989 from 2007 and 1432 from 2008.
+
+I created equation \ref{eq:payoff1}, which is our payoff function and ran the actual matches and counterfactual matches through this function to get dataframes of the payoffs associate with each actual and hypothetical match.  Finally, I made an objective function, equation \ref{eq:objective1}, and ran through the associated payoffs.  I then used the Nelder-Mead maximization method to estimate the parameters.  If it had worked, I would have gotten a values for $\alpha$ and $\beta$ that would maximize the number of correct matches estimated by the model.
+
+\begin{equation}
+    \label{eq:payoff1}
+    f_m(b,t) = x_{1bm} y_{1tm} + \alpha x_{2bm} y_{1tm} + \beta distance_{btm} + \epsilon_{btm}
+\end{equation}
+
+\begin{equation}
+    \label{eq:objective1}
+    \sum_{y=1}^{Y} \sum_{b=1}^{M_y - 1} \sum_{b'=b+1}^{M_y} 1[f(b,t|\beta) + f(b',t'|\beta) \geq f(b',t|\beta) + f(b,t'|\beta)]
+\end{equation}
+
+Similarly, I created equation \ref{eq:payoff2}, which is a payoff function with transfers, and ran the actual and counterfactual matches through this new function to get the payoffs associated with each one.  I created a new objective function, equation \ref{eq:objective2}, and ran the associated payoffs through it.  I then used the Nelder-Mead maximization method to estimate the parameters.  If it had worked, I would have gotten a values for $\delta$, $\alpha$, $\gamma$, and $\beta$ that would maximize the number of correct matches estimated by the model.
+
+\begin{equation}
+    \label{eq:payoff2}
+    f_m(b,t) = \delta x_{1bm} y_{1tm} + \alpha x_{2bm} y_{1tm} + \gamma HHI_{tm} + \beta distance_{btm} + \epsilon_{btm}
+\end{equation}
+
+\begin{equation}
+    \label{eq:objective2}
+    \sum_{y=1}^{Y} \sum_{b=1}^{M_y - 1} \sum_{b'=b+1}^{M_y} 1[f(b,t|\beta) + f(b,t'|\beta) \geq p_{bt} - p_{b't'} \land f(b',t'|\beta) + f(b',t|\beta) \geq p_{b't'} - p_{bt}]
+\end{equation}
+
+\end{document}
