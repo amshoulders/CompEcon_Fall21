@@ -1,0 +1,117 @@
+\documentclass{article}[12pt]
+
+% General packages
+\usepackage[english]{babel}
+\pagenumbering{arabic}
+\usepackage{color}
+\usepackage{lettrine}
+\usepackage{setspace}
+\usepackage{yfonts}
+\usepackage{type1cm}
+
+
+% Graphics packages
+\usepackage{graphicx}
+\usepackage{rotating}
+
+
+% Math packages
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{xparse}
+\usepackage{physics}
+
+% Links packages
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={blue!80!black},
+    citecolor={blue!80!black},
+    urlcolor={blue!80!black}
+}
+
+
+% Tables packages
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{float}
+\usepackage[bottom]{footmisc}
+\usepackage{booktabs,caption}
+\usepackage[flushleft]{threeparttable}
+\usepackage[labelfont=sc]{caption}
+\captionsetup[table]{skip=0pt}
+
+
+% citations
+\usepackage[round]{natbib}   % omit 'round' option if you prefer square brackets
+%\bibliographystyle{plainnat}
+%\bibliographystyle{abbrv}
+%\bibliographystyle{acm}
+%\bibliographystyle{alpha}
+\bibliographystyle{apalike}
+%\bibliographystyle{ieeetr}
+%\bibliographystyle{plain}
+%\bibliographystyle{siam}
+%\bibliographystyle{unsrt}
+
+% figures
+\usepackage{subcaption}
+
+
+\begin{document}
+
+\title{Problem Set 7}
+\author{Angela Shoulders}
+\date{November 18, 2021}
+
+\maketitle
+
+The model I have created is an individual model for health and health related activities.  At the beginning of the individual's life, they are endowed with $h_1$ units of health normalized to 1.  This person gets utility from their health status and nothing else.  Their health in the next period is equal to their health today plus their discounted health related choices.  Their choices can be positive (taking the stairs instead of the elevator) or negative (not getting a flu shot).  However, their choices are discounted by $\delta$ between 0 and 1 so they do not experience the full benefit or cost of their actions.  I am using log utility.  The state variable is $h_1$ and the control variables are $c_t$ and $h_{t+1}$
+
+\begin{equation}
+\begin{aligned}
+    \label{eq:max}
+    \min_{c_t, h_{t+1}} \sum_{t=1}^T \beta^{t-1} ln(h_t) \\
+    \textrm{s.t.} \ i) \ h_1 = \sum_{t=1}^T(h_t + \delta c_t) \\
+    ii) \ h_{t+1} = h_t + \delta c_t \\
+    iii) \ h_1 > 0 \ given \\
+    iv) \ h_{T+1} \geq0 \\
+    v) \ c_t \geq0 \\
+    vi) \ u' > 0, u'' < 0 , u'(0) = \infty, u'(\infty) = 0
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+    \label{eq:lagrangian}
+    \mathcal{L} = \sum_{t=1}^T \beta^{t-1} ln(h_t) +  \lambda_t \sum_{t=1}^T [h_{t+1} - h_t - \delta c_t] + \gamma_t[h_1 - \sum_{t=1}^T(h_t + \delta c_t)] + \phi_t \sum_{t=1}^T c_t + \eta_t h_{T+1}
+\end{aligned}
+\end{equation}
+
+FOCs:
+
+\begin{equation}
+\begin{aligned}
+    \label{eq:fonc}
+    \frac{\partial \mathcal{L}}{\partial h_{t+1}} = \lambda_t + \beta ^t \frac{1}{h_{t+1}} - \lambda_{t+1} + \gamma_{t+1} = 0 \\
+    \frac{\partial \mathcal{L}}{\partial c_t} = -\lambda_t \delta - \gamma_t \delta - \phi_t = 0 \\
+    \frac{\partial \mathcal{L}}{\partial h_{T+1}} = \lambda_T + \eta_T = 0
+\end{aligned}
+\end{equation}
+
+The Bellman equation is:
+
+\begin{equation}
+\begin{aligned}
+    \label{eq:bellman}
+    v_{T+1}(h_1) = u(h_1) + \beta v_T (h_{T+1})
+\end{aligned}
+\end{equation}
+
+\end{document}
