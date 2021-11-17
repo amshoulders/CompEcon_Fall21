@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.8.25)  13 NOV 2021 11:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.8.25)  17 NOV 2021 13:26
 entering extended mode
 **c:/Users/angela/Documents/Fall2021/CompEcon_Fall21/CompEcon_Fall21/ProblemSets/PS7/ProblemSet7_Shoulders.tex
 (c:/Users/angela/Documents/Fall2021/CompEcon_Fall21/CompEcon_Fall21/ProblemSets/PS7/ProblemSet7_Shoulders.tex
@@ -568,29 +568,29 @@ LaTeX Info: Redefining \nameref on input line 67.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: threeparttable package is loaded.
 Package caption Info: End \AtBeginDocument code.
+ [1
 
+{C:/Users/angela/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
 
 Package caption Warning: Unused \captionsetup[table] on input line 48.
 See the caption package documentation for explanation.
 
-[1
-
-{C:/Users/angela/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (ProblemSet7_Shoulders.aux)
+[2] (ProblemSet7_Shoulders.aux)
 Package rerunfilecheck Info: File `ProblemSet7_Shoulders.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 15254 strings out of 478839
- 233931 string characters out of 2844900
- 573065 words of memory out of 3000000
- 32925 multiletter control sequences out of 15000+600000
- 410083 words of font info for 54 fonts, out of 8000000 for 9000
+ 15265 strings out of 478839
+ 234015 string characters out of 2844900
+ 569065 words of memory out of 3000000
+ 32927 multiletter control sequences out of 15000+600000
+ 410418 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,9n,117p,856b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
-<C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on ProblemSet7_Shoulders.pdf (1 page, 121493 bytes).
+ 69i,9n,117p,697b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
+{C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/angela/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on ProblemSet7_Shoulders.pdf (2 pages, 133151 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 6 named destinations out of 1000 (max. 500000)
+ 90 PDF objects out of 1000 (max. 8388607)
+ 14 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

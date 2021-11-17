@@ -72,13 +72,47 @@
 
 \maketitle
 
-The model I have created is an individual model for health and health related activities.  At the beginning of the individual's life, they are endowed with $h_1$ units of health normalized to 1.  This person gets utility from their health status and nothing else.  Their health in the next period is equal to their health today plus their discounted health related choices.  Their choices can be positive (taking the stairs instead of the elevator) or negative (not getting a flu shot).  However, their choices are discounted by $\delta$ between 0 and 1 so they do not experience the full benefit or cost of their actions.  I am using log utility.  The state variable is $h_1$ and the control variables are $c_t$ and $h_{t+1}$
+The model I have created is an individual model for health and health related activities.  All of us are aware, even if it's just in a philisophical sense, that our actions every day have an impact on our health in the future.  Fortunately (or perhaps unfortunately), our body takes a long time to incorporate the small health related decisions we make every day.  This is why we don't see the benefits of our good choices immediately, and conversely we don't deal with the consequenses of our bad choices when we make them.  This model attempts to show this concept.
+
+\begin{enumerate}
+    \item Population of agents
+    \begin{itemize}
+        \item We are modeling inidvidual decisions for health and health related activities
+    \end{itemize}
+    \item Preferences
+    \begin{itemize}
+        \item Our utility function is increasing and concave.  Our individuals get utility from their health in the current period, $h_t$.
+        \item We have a discount factor $\beta$ which is between 0 and 1.  This discount factor disounts our future utility.
+        \item We have a second disount factor $\delta$, also between 0 and 1.  This discount factor lessens the positive effects of our good health behaviour and the negative effects of our bad health behaviour.
+    \end{itemize}
+    \item Productive technology
+    \begin{itemize}
+        \item In the initial period, the individual is given an elotment of health, $h_1 > 0$.
+        \item Health is subject to the following equation : $h_{t+1} = h_t + \delta c_t$.  This means that the individual's health tomorrow is based on their health today plus the discounted health choices they make today.  Their health choices, $c_t$, can be positive (taking the stairs instead of the elevator) or negative (not getting a flu shot) both concpetually and numerically.
+        \item Note: Health can never be negative.  In all periods, health must be greater than or equal to 0.
+    \end{itemize}
+    \item Information technology
+    \begin{itemize}
+        \item The individual has perfect information and knows both the magnitude and direction of the health choices they make in each period.
+    \end{itemize} \pagebreak
+    \item Enforcement technology
+    \begin{itemize}
+        \item N/A
+    \end{itemize}
+    \item Matching technology
+    \begin{itemize}
+        \item N/A
+    \end{itemize}
+    \item The state variable is $h_1$ and the control variables are $c_t$ and $h_{t+1}$
+\end{enumerate}
+
+Our problem is:
 
 \begin{equation}
 \begin{aligned}
     \label{eq:max}
-    \min_{c_t, h_{t+1}} \sum_{t=1}^T \beta^{t-1} ln(h_t) \\
-    \textrm{s.t.} \ i) \ h_1 = \sum_{t=1}^T(h_t + \delta c_t) \\
+    \min_{c_t, h_{t+1}} \sum_{t=1}^T \beta^{t-1} u(h_t) \\
+    \textrm{s.t.} \ i) \ h_1 \leq \sum_{t=1}^T(h_t + \delta c_t) \\
     ii) \ h_{t+1} = h_t + \delta c_t \\
     iii) \ h_1 > 0 \ given \\
     iv) \ h_{T+1} \geq0 \\
@@ -87,10 +121,11 @@ The model I have created is an individual model for health and health related ac
 \end{aligned}
 \end{equation}
 
+This implies our Lagrangian:
 \begin{equation}
 \begin{aligned}
     \label{eq:lagrangian}
-    \mathcal{L} = \sum_{t=1}^T \beta^{t-1} ln(h_t) +  \lambda_t \sum_{t=1}^T [h_{t+1} - h_t - \delta c_t] + \gamma_t[h_1 - \sum_{t=1}^T(h_t + \delta c_t)] + \phi_t \sum_{t=1}^T c_t + \eta_t h_{T+1}
+    \mathcal{L} = \sum_{t=1}^T \beta^{t-1} u(h_t) +  \lambda_t \sum_{t=1}^T [h_{t+1} - h_t - \delta c_t] + \gamma_t[h_1 - \sum_{t=1}^T(h_t + \delta c_t)] + \phi_t \sum_{t=1}^T c_t + \eta_t h_{T+1}
 \end{aligned}
 \end{equation}
 
@@ -99,7 +134,7 @@ FOCs:
 \begin{equation}
 \begin{aligned}
     \label{eq:fonc}
-    \frac{\partial \mathcal{L}}{\partial h_{t+1}} = \lambda_t + \beta ^t \frac{1}{h_{t+1}} - \lambda_{t+1} + \gamma_{t+1} = 0 \\
+    \frac{\partial \mathcal{L}}{\partial h_{t+1}} = \lambda_t + \beta ^t u'(h_{t+1}) - \lambda_{t+1} + \gamma_{t+1} = 0 \\
     \frac{\partial \mathcal{L}}{\partial c_t} = -\lambda_t \delta - \gamma_t \delta - \phi_t = 0 \\
     \frac{\partial \mathcal{L}}{\partial h_{T+1}} = \lambda_T + \eta_T = 0
 \end{aligned}
